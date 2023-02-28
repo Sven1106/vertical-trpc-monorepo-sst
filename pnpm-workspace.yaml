@@ -1,0 +1,7 @@
+packages:
+  - './api/*'
+  - './features/*'
+  - './shared/*'
+  - './web'
+prefer-workspace-packages: true
+link-workspace-packages: true

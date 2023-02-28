@@ -1,0 +1,19 @@
+import { SSTConfig } from 'sst';
+import { API } from './infrastructure/MyStack';
+import { RemovalPolicy } from 'aws-cdk-lib';
+
+export default {
+  config(_input) {
+    return {
+      name: 'vertical-trpc-monorepo-sst',
+      region: 'eu-central-1',
+    };
+  },
+  stacks(app) {
+    if (app.stage !== 'prod') {
+      // Remove all resources when non-prod stages are removed
+      app.setDefaultRemovalPolicy(RemovalPolicy.DESTROY);
+    }
+    app.stack(API);
+  },
+} satisfies SSTConfig;

@@ -1,0 +1,9 @@
+{
+  "name": "@shared/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "vertical-trpc-monorepo-sst",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "api/*",
+    "features/*",
+    "shared/*",
+    "web"
+  ],
+  "scripts": {
+    "build": "sst build",
+    "clear:node_modules": "npkill",
+    "console": "sst console",
+    "dev": "sst dev",
+    "distribute": "sst deploy",
+    "remove": "sst remove",
+    "sort-packages": "sort-package-json \"package.json\" \"web/package.json\" \"features/*/package.json\" \"shared/*/package.json\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@tsconfig/vite-react": "^1.0.1",
+    "aws-cdk-lib": "2.62.2",
+    "constructs": "10.1.156",
+    "npkill": "^0.10.0",
+    "sort-package-json": "^2.4.1",
+    "sst": "2.0.23",
+    "typescript": "^4.9.5"
+  }
+}
