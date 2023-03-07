@@ -1,8 +1,8 @@
 import { instance } from '../index';
-import { greetingProcedure } from '@features/greeting/procedure';
+import { greetingProcedure } from '../../../features/greeting/procedure';
 
 // Add all procedures here
-let procedures = {
+const procedures = {
   ...greetingProcedure,
 };
 

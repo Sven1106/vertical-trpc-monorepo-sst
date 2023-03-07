@@ -4,7 +4,7 @@ import { ApiHandler } from 'sst/node/api';
 
 const dynamoDb = new DynamoDB.DocumentClient();
 
-export const handler = ApiHandler(async _evt => {
+export const handler = ApiHandler(async () => {
   const getParams = {
     // Get the table name from the environment variable
     TableName: Table.Counter.tableName,

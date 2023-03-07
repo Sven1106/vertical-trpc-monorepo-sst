@@ -12,7 +12,8 @@ function App() {
       method: 'POST',
     })
       .then(response => response.text())
-      .then(response => setCount(response));
+      .then(response => setCount(response))
+      .catch(err => console.log(err));
   }
   const [queryClient] = useState(() => new QueryClient());
 

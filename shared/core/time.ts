@@ -1,5 +1,3 @@
-export * as Time from './time';
-
-export function now() {
+export default function Now() {
   return new Date().toISOString();
 }
