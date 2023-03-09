@@ -1,40 +1,30 @@
-import { DynamoDB } from 'aws-sdk';
+import { DynamoDB } from '@aws-sdk/client-dynamodb';
+import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 import { Table } from 'sst/node/table';
 import { ApiHandler } from 'sst/node/api';
 
-const dynamoDb = new DynamoDB.DocumentClient();
+const dynamoDb = new DynamoDB({});
 
 export const handler = ApiHandler(async () => {
-  const getParams = {
-    // Get the table name from the environment variable
+  const { Item } = await dynamoDb.getItem({
     TableName: Table.Counter.tableName,
-    // Get the row where the counter is called "clicks"
-    Key: {
+
+    Key: marshall({
       counter: 'clicks',
-    },
-  };
-  const results = await dynamoDb.get(getParams).promise();
-
-  // If there is a row, then get the value of the
-  // column called "tally"
-  let count = results.Item ? results.Item.tally : 0;
-
-  const putParams = {
+    }),
+  });
+  const count = Item ? (unmarshall(Item).tally as number) : 0;
+  await dynamoDb.updateItem({
     TableName: Table.Counter.tableName,
-    Key: {
+    Key: marshall({
       counter: 'clicks',
-    },
-    // Update the "tally" column
+    }),
     UpdateExpression: 'SET tally = :count',
-    ExpressionAttributeValues: {
-      // Increase the count
-      ':count': ++count,
-    },
-  };
-  await dynamoDb.update(putParams).promise();
+    ExpressionAttributeValues: marshall({ ':count': count + 1 }),
+  });
 
   return {
     statusCode: 200,
-    body: count,
+    body: count.toString(),
   };
 });

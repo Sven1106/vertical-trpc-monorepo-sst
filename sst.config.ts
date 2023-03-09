@@ -3,7 +3,7 @@ import { API } from './infrastructure/MyStack';
 import { RemovalPolicy } from 'aws-cdk-lib';
 
 export default {
-  config(_input) {
+  config() {
     return {
       name: 'vertical-trpc-monorepo-sst',
       region: 'eu-central-1',
