@@ -4,12 +4,7 @@
   "type": "module",
   "dependencies": {
     "@api/trpc": "workspace:*",
-    "aws-sdk": "^2.1315.0",
-    "sst": "2.1.14"
-  },
-  "devDependencies": {
-    "@types/aws-lambda": "^8.10.110",
-    "@types/node": "^18.13.0",
-    "sst": "2.1.14"
+    "@aws-sdk/client-dynamodb": "^3.284.0",
+    "@aws-sdk/util-dynamodb": "^3.284.0"
   }
 }
