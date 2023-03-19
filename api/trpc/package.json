@@ -3,14 +3,9 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@features/greeting": "workspace:*",
-    "@tanstack/react-query": "^4.24.9",
-    "@trpc/client": "^10.12.0",
-    "@trpc/react-query": "^10.12.0",
     "@trpc/server": "^10.11.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "superjson": "^1.12.2",
-    "zod": "^3.20.6"
+    "@shared/trpc-instance": "workspace:*",
+    "@features/farewell": "workspace:*",
+    "@features/greeting": "workspace:*"
   }
 }

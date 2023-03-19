@@ -1,4 +1,4 @@
-import { StackContext, Api, Table, StaticSite } from 'sst/constructs';
+import { Api, StackContext, StaticSite, Table } from 'sst/constructs';
 
 export function API({ stack }: StackContext) {
   // Create the table
@@ -16,8 +16,8 @@ export function API({ stack }: StackContext) {
     },
     routes: {
       'POST /': 'features/click/lambda.handler',
-      'GET /trpc/{proxy+}': 'api/trpc/appRouterAdapters.awsLambdaHandler',
-      'POST /trpc/{proxy+}': 'api/trpc/appRouterAdapters.awsLambdaHandler',
+      'GET /trpc/{proxy+}': 'api/trpc/awsLambdaHandler.handler',
+      'POST /trpc/{proxy+}': 'api/trpc/awsLambdaHandler.handler',
     },
   });
 

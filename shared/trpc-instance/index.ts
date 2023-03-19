@@ -1,5 +1,6 @@
 import { initTRPC } from '@trpc/server';
 import superjson from 'superjson';
+
 export const instance = initTRPC.create({
   transformer: superjson,
   errorFormatter({ shape }) {

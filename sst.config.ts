@@ -1,6 +1,6 @@
+import { RemovalPolicy } from 'aws-cdk-lib';
 import { SSTConfig } from 'sst';
 import { API } from './infrastructure/MyStack';
-import { RemovalPolicy } from 'aws-cdk-lib';
 
 export default {
   config() {

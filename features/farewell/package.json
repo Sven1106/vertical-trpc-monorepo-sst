@@ -1,5 +1,5 @@
 {
-  "name": "@features/greeting",
+  "name": "@features/farewell",
   "private": true,
   "type": "module",
   "dependencies": {

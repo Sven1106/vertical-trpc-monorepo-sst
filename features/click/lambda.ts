@@ -1,7 +1,7 @@
 import { DynamoDB } from '@aws-sdk/client-dynamodb';
 import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
-import { Table } from 'sst/node/table';
 import { ApiHandler } from 'sst/node/api';
+import { Table } from 'sst/node/table';
 
 const dynamoDb = new DynamoDB({});
 

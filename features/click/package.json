@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@api/trpc": "workspace:*",
     "@aws-sdk/client-dynamodb": "^3.284.0",
     "@aws-sdk/util-dynamodb": "^3.284.0"
   }

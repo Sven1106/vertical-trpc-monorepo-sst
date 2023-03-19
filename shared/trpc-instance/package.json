@@ -1,0 +1,9 @@
+{
+  "name": "@shared/trpc-instance",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@trpc/server": "^10.11.1",
+    "superjson": "^1.12.2"
+  }
+}
