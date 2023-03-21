@@ -1,6 +1,6 @@
 import { RemovalPolicy } from 'aws-cdk-lib';
 import { SSTConfig } from 'sst';
-import { API } from './infrastructure/MyStack';
+import { MyStack } from './infrastructure/MyStack';
 
 export default {
   config() {
@@ -14,6 +14,6 @@ export default {
       // Remove all resources when non-prod stages are removed
       app.setDefaultRemovalPolicy(RemovalPolicy.DESTROY);
     }
-    app.stack(API);
+    app.stack(MyStack);
   },
 } satisfies SSTConfig;

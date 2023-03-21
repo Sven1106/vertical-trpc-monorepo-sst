@@ -22,7 +22,8 @@
     "remove": "sst remove",
     "sort-packages": "sort-package-json \"package.json\" \"api/*/package.json\" \"features/*/package.json\" \"shared/*/package.json\" \"web/package.json\"",
     "typecheck": "tsc --noEmit",
-    "prettier": "prettier --write ./**/*.{js,jsx,ts,tsx,json,md,css,scss,html,mdx}"
+    "prettier": "prettier --write ./**/*.{js,jsx,ts,tsx,json,md,css,scss,html,mdx}",
+    "visualize": "pnpx pnpm-workspace-graph"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",

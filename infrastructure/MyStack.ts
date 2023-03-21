@@ -1,6 +1,6 @@
 import { Api, StackContext, StaticSite, Table } from 'sst/constructs';
 
-export function API({ stack }: StackContext) {
+export function MyStack({ stack }: StackContext) {
   // Create the table
   const table = new Table(stack, 'Counter', {
     fields: {
