@@ -16,3 +16,7 @@ export const Message = () => {
   }
   return <h1>error</h1>;
 };
+
+function add(a: number, b: number) {
+  return a + b;
+}

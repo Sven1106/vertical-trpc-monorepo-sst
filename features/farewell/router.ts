@@ -12,6 +12,11 @@ export const farewellRouter = instance.router({
         })
         .nullish(),
     )
+    .output(
+      z.object({
+        text: z.string(),
+      }),
+    )
     .query(({ input }) => {
       // This is what you're returning to your client
       return {
